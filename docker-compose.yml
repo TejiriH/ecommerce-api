@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  cart-service:
+    build:
+      context: ./cart-service
+    ports:
+      - "8001:8001"
+    depends_on:
+      - product-service
+    restart: always
+
+  product-service:
+    build:
+      context: ./product-service
+    ports:
+      - "8000:8000"
+    restart: always
+
+  order-service:
+    build:
+      context: ./order-service
+    ports:
+      - "8002:8002"
+    restart: always
+    depends_on:
+      - cart-service
+      - product-service
