@@ -30,4 +30,5 @@ spec:
   ports:
     - port: 8001
       targetPort: 8001
-  type: ClusterIP
+      nodePort: 30001  # You can specify the node port here or leave it for Kubernetes to allocate
+  type: NodePort  # Changed from ClusterIP to NodePort
