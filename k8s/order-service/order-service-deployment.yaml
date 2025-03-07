@@ -18,7 +18,7 @@ spec:
         - name: order-service
           image: tejirih/order-service:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 8002
 ---
 apiVersion: v1
 kind: Service
