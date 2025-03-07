@@ -28,6 +28,6 @@ spec:
   selector:
     app: cart-service
   ports:
-    - port: 80
-      targetPort: 8080
+    - port: 8001
+      targetPort: 8001
   type: ClusterIP

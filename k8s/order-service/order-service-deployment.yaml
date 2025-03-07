@@ -28,6 +28,6 @@ spec:
   selector:
     app: order-service
   ports:
-    - port: 80
-      targetPort: 8080
+    - port: 8002
+      targetPort: 8002
   type: ClusterIP
