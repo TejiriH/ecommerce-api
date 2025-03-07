@@ -1,17 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ecommerce-app
+  name: product-service
   namespace: argocd
 spec:
+  destination:
+    name: ""
+    namespace: default
+    server: https://kubernetes.default.svc
   project: default
   source:
+    path: k8s/product-service
     repoURL: https://github.com/TejiriH/ecommerce-api.git
-    targetRevision: main
-    path: kubernetes  # This is where our YAML files are stored
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: default
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
